@@ -27,7 +27,7 @@ PID_PATH="/var/run"
 PID_FILE="$PID_PATH/$PROG_NAME"
 PROG_PATH="/bin/kibana/bin"
 PROG_LOGDIR=/var/log/$PROG_NAME
-
+ 
 if ! [ -e "$PROG_LOGDIR" ]; then
     mkdir -p $PROG_LOGDIR
 fi
