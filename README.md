@@ -14,7 +14,7 @@ I appreciate any opportunity to improve it.
 
 ## Instructions
 
-Save this script to /etc/init.d/kibana
+Save this script to /etc/init.d/ with the name kibana
 
 type sudo update-rc.d kibana defaults
 
