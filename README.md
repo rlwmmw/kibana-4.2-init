@@ -14,8 +14,13 @@ I appreciate any opportunity to improve it.
 
 ## Instructions
 
-Save this script to /etc/init.d/ with the name kibana
+Download the raw file, allow execution, copy to /etc/init.d, and add to update-rc.d
 
-type sudo update-rc.d kibana defaults
+   cd /tmp
+   wget https://raw.githubusercontent.com/rlwmmw/kibana-4.2-init/master/etc/init.d/kibana
+   sudo chmod +x kibana && sudo mv kibana /etc/init.d
+   sudo update-rc.d kibana defaults
 
-Usage: service kibana {start|stop|restart|status|reload}
+## Usage: 
+
+    service kibana {start|stop|restart|status|reload}
