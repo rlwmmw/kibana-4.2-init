@@ -69,23 +69,27 @@ stop() {
 status() {
     if [ -e "$PID_PATH/$PROG_NAME.pid" ]; then
 	    PROG_PID="$(cat $PID_PATH/$PROG_NAME.pid)"
-		ps -l | grep " $PROG_PID " | grep -v grep
+		ps -l | grep " $PROG_PID " | grep -v grep 1>&2 > /tmp/null
 		if [ $? == "0" ]; then
             echo "$PROG_NAME is running with PID: $PROG_PID"
+			rm /tmp/null
 		else
-		    ps -aux | grep "$PROG_NAME" | grep -v grep
+		    ps -aux | grep "$PROG_NAME" | grep -v grep 1>&2 > /tmp/null
 			if [ $? == "0" ]; then
 				PROG_PID="$(ps -aux | grep "$PROG_NAME" | grep -v grep | awk '{ print $2 }')"
 			    printf "$PROG_PID\n" >"$PID_PATH/$PROG_NAME.pid"
 			    echo "$PROG_NAME is running with PID: $PROG_PID"
+				rm /tmp/null
 			else
 			    rm "$PID_PATH/$PROG_NAME.pid"
 				echo "$PROG_NAME is not running"
+				rm /tmp/null
 			fi
 		fi
     else 
         ## Program is not running
         echo "$PROG_NAME is not running"
+		rm /tmp/null
     fi
 }
 case "$1" in
