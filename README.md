@@ -16,10 +16,10 @@ I appreciate any opportunity to improve it.
 
 Download the raw file, allow execution, copy to /etc/init.d, and add to update-rc.d
 
-   cd /tmp
-   wget https://raw.githubusercontent.com/rlwmmw/kibana-4.2-init/master/etc/init.d/kibana
-   sudo chmod +x kibana && sudo mv kibana /etc/init.d
-   sudo update-rc.d kibana defaults
+    cd /tmp
+    wget https://raw.githubusercontent.com/rlwmmw/kibana-4.2-init/master/etc/init.d/kibana
+    sudo chmod +x kibana && sudo mv kibana /etc/init.d
+    sudo update-rc.d kibana defaults
 
 ## Usage: 
 
